@@ -25,7 +25,7 @@ const user=useSelector(selectUser);
 
     useEffect(() => {
         if (!cameraImage) {
-            history.replace('/');
+            history.replace('/capture');
         }
     }, [cameraImage, history]);
 
@@ -50,7 +50,7 @@ const user=useSelector(selectUser);
                         profilePic:user.profilePic,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     });
-                    history.replace("/chats");
+                    history.replace("/");
                 }
                 )
             }

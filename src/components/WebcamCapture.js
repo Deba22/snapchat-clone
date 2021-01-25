@@ -5,6 +5,7 @@ import { setCameraImage } from '../features/cameraSlice';
 import {useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './WebcamCapture.css';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const videoConstraints = {
     width: 250,
@@ -24,8 +25,13 @@ function WebcamCapture() {
       history.push('/preview');
     }, [webcamRef])
 
+    const closeCapture = () => {
+        console.log("testtt");
+        history.replace('/');
+    }
     return (
         <div className="webcamCapture">
+            <ArrowBackIcon className="webcamCapture__backIcon" onClick={closeCapture}/>
             <Webcam audio={false} height={videoConstraints.height} ref={webcamRef}
                 screenshotFormat="image/jpeg" width={videoConstraints.width}
                 videoConstraints={videoConstraints}

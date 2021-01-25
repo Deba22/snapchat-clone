@@ -17,7 +17,7 @@ function ChatView() {
     }, [])
 
     const exit = () => {
-        history.replace('/chats');
+        history.replace('/');
     }
     return (
         <div className="chatView">

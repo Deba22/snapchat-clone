@@ -32,7 +32,7 @@ function App() {
         dispatch(logout)
       }
     })
-  })
+  },[]);
 
   return (
     <div className="app">
@@ -40,27 +40,27 @@ function App() {
         {!user ? (
           <Login />
         ) : (
-          <>
-          <img className="app__logo" src={logo} alt=""/>
-            <div className="app__body">
-              <div className="app__bodyBackground">
-              <Switch>
-                <Route path="/chats">
-                  <Chats />
-                </Route>
-                <Route path="/chatview">
-                <ChatView />
-                </Route>
-                <Route path="/preview">
-                  <Preview />
-                </Route>
-                <Route exact path="/">
-                  <WebcamCapture />
-                </Route>
-              </Switch>
+            <>
+              <img className="app__logo" src={logo} alt="" />
+              <div className="app__body">
+                <div className="app__bodyBackground">
+                  <Switch>
+                <Route path="/capture">
+                      <WebcamCapture/>
+                    </Route>
+                    <Route path="/chatview">
+                      <ChatView />
+                    </Route>
+                    <Route path="/preview">
+                      <Preview />
+                    </Route>
+                    <Route exact path="/">
+                      <Chats />
+                    </Route>
+                  </Switch>
+                </div>
+
               </div>
-             
-            </div>
             </>
           )}
 

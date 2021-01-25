@@ -35,6 +35,7 @@
 .chats__avatar{
     height: 25px !important;
     width:25px !important;
+    cursor: pointer;
 }
 
 .chats__posts::-webkit-scrollbar{

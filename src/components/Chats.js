@@ -34,7 +34,7 @@ const logoutOfApp=()=>{
 
     const takeSnap = () => {
         dispatch(resetCameraImage());
-        history.push("/");
+        history.push("/capture");
     }
     return (
         <div className="chats">
